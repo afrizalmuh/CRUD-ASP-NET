@@ -1,0 +1,49 @@
+﻿@model CRUD_APPLICATION.Models.Person
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Person</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group" style="display:grid;grid-template-columns:60px 1fr; width:400px; gap:10px">
+                <label asp-for="Nik" class="control-label">NIK</label>
+                <input asp-for="Nik" class="form-control" />
+                <span asp-validation-for="Nik" class="text-danger"></span>
+            </div>
+            <div class="form-group" style="display:grid;grid-template-columns:60px 1fr; width:400px; gap:10px">
+                <label asp-for="Name" class="control-label">NAMA</label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group" style="display:grid;grid-template-columns:60px 1fr; width:400px; gap:10px">
+                <label asp-for="Alamat" class="control-label">ALAMAT</label>
+                <input asp-for="Alamat" class="form-control" />
+                <span asp-validation-for="Alamat" class="text-danger"></span>
+            </div>
+            <div class="form-group" style="display:grid;grid-template-columns:60px 1fr; width:400px; gap:10px">
+                <label asp-for="StatusPerkawinan" class="control-label">STATUS</label>
+                <input asp-for="StatusPerkawinan" class="form-control" />
+                <span asp-validation-for="StatusPerkawinan" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+                <div class="btn btn-secondary">
+                    <a style="text-decoration:none;color:white" asp-action="Index">Back</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
